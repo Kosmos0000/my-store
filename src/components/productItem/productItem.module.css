@@ -1,0 +1,11 @@
+.product {
+    max-width: 295px;
+}
+
+.price {
+    color: #F44E51;
+}
+.image {
+    max-width: 100%;
+    padding: 427px 0 0 0;
+}
