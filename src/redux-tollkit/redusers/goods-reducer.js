@@ -1,5 +1,8 @@
 
-import {createReducer} from "@reduxjs/toolkit";
+import {createReducer, createAction} from "@reduxjs/toolkit";
+
+export const addToFavorites = createAction('ADD_TO_FAVORITES');
+export const removeToFavorites = createAction('REMOVE_TO_FAVORITES');
 
 const initialState = {
     items : [
@@ -10,7 +13,7 @@ const initialState = {
             discount: 70,
             colors: ['Beige', 'Black', 'White'],
             sizes: ['XXS/30', 'XS/32', 'M/30', 'L/42',],
-            isElected: false,
+            isInFavorites: false,
             isItInTheBasket: false
         },
         {
@@ -20,7 +23,7 @@ const initialState = {
             discount: 0,
             colors: ['Beige', 'Black'],
             sizes: ['XXS/30', 'XS/32', 'M/30', 'L/42',],
-            isElected: false,
+            isInFavorites: false,
             isItInTheBasket: false
         },
         {
@@ -30,7 +33,7 @@ const initialState = {
             discount: 50,
             colors: ['Black', 'White'],
             sizes: ['XXS/30', 'XS/32', 'M/30', 'L/42',],
-            isElected: false,
+            isInFavorites: false,
             isItInTheBasket: false
         },
         {
@@ -40,12 +43,17 @@ const initialState = {
             discount: 40,
             colors: ['White'],
             sizes: ['M/30', 'L/42',],
-            isElected: false,
+            isInFavorites: false,
             isItInTheBasket: false
         }
     ]
 };
 
 export default createReducer(initialState, {
-
+    [addToFavorites]: function (state, action) {
+        state.items = state.items.map((item) => item.id === action.payload ? {...item, isInFavorites: true} : {...item} );
+    },
+    [removeToFavorites]: function (state, action) {
+        state.items = state.items.map((item) => item.id === action.payload ? {...item, isInFavorites: false} : {...item} );
+    }
 })

@@ -1,0 +1,8 @@
+.body {
+    display: flex;
+    justify-content: space-between;
+    max-width: 928px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    padding: 50px 0;
+}

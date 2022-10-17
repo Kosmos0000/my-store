@@ -1,11 +1,43 @@
 .product {
-    max-width: 295px;
+    flex: 0 1 295px;
+    position: relative;
 }
 
-.price {
-    color: #F44E51;
+.percent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 3px 15px;
+    background: #E85858;
+    color: #fff;
+    font-weight: 600;
 }
+
+.priceContainer {
+    display: flex;
+    margin: 14px 8px;
+}
+
+.discountPrice {
+    color: #F44E51;
+    font-weight: 600;
+}
+.price {
+    font-weight: 500;
+    opacity: 0.8;
+    color: #2C2C31;
+    text-decoration: line-through;
+    margin: 0 4px 0 0;
+}
+
 .image {
     max-width: 100%;
     padding: 427px 0 0 0;
+}
+
+.icon {
+    max-width: 20px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
 }

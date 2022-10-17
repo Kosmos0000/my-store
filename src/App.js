@@ -1,16 +1,13 @@
 import './App.css';
 import ProductItem from "./components/productItem/productItem";
 import {useSelector} from "react-redux";
+import ContainerItems from "./components/containerItems/containerItems";
 
 function App() {
 
-    let items = useSelector((state) => state.goods.items);
-
-    let itemsComponents = items.map((item) => <ProductItem item={item}/>);
-
   return (
     <div className="App">
-        {itemsComponents}
+        <ContainerItems/>
     </div>
   );
 }
