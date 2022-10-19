@@ -12,9 +12,9 @@ const initialState = {
             id: 1,
             src: 'https://avatars.mds.yandex.net/get-mpic/5221441/img_id5252206666447556010.jpeg/orig',
             price: 2799,
-            discount: 70,
+            discount: 30,
             colors: ['Beige', 'Black', 'White'],
-            sizes: ['XXS/30', 'XS/32', 'M/30', 'L/42',],
+            sizes: ['XXS', 'XS', 'L',],
             isInFavorites: false,
             isItInTheBasket: false
         },
@@ -24,7 +24,7 @@ const initialState = {
             price: 3500,
             discount: 0,
             colors: ['Beige', 'Black'],
-            sizes: ['XXS/30', 'M/30', 'L/42',],
+            sizes: ['XXS', 'M', 'L',],
             isInFavorites: false,
             isItInTheBasket: false
         },
@@ -34,7 +34,7 @@ const initialState = {
             price: 3400,
             discount: 50,
             colors: ['Black'],
-            sizes: ['XXS/30', 'XS/32', 'M/30', 'L/42',],
+            sizes: ['XXS', 'XS', 'M', 'L',],
             isInFavorites: false,
             isItInTheBasket: false
         },
@@ -44,11 +44,15 @@ const initialState = {
             price: 3000,
             discount: 40,
             colors: ['White'],
-            sizes: ['M/30', 'L/42',],
+            sizes: ['M', 'L',],
             isInFavorites: false,
             isItInTheBasket: false
         }
-    ]
+    ],
+    options: {
+        sizes: ['XXS', 'XS', 'M', 'L'],
+        colors: ['White', 'Beige', 'Black']
+    }
 };
 
 export default createReducer(initialState, {
