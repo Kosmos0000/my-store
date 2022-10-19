@@ -1,6 +1,15 @@
 .product {
     flex: 0 1 295px;
     position: relative;
+    margin: 0 0 42px 0;
+}
+
+.productInfo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    width: 100%;
 }
 
 .percent {
@@ -40,4 +49,37 @@
     position: absolute;
     top: 15px;
     right: 15px;
+}
+
+.basket {
+    background: #2C2C31;
+    border-radius: 2px;
+    padding: 11px 19px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.basket>img{
+    margin: 0 0 0 8px;
+}
+
+.sizeAndBasket {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 7px 12px 7px;
+}
+
+.size {
+    font-weight: 600;
+    font-size: 12px;
+    color: #B1B1B1;
+    text-transform: uppercase;
+}
+
+.size.active {
+    color: #000;
 }
