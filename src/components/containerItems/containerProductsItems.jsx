@@ -1,12 +1,13 @@
 import React from 'react';
 import {useSelector} from "react-redux";
 import ProductItem from "./productItem/productItem";
-import style from './containerItems.module.css';
+import style from './containerProductsItems.module.css';
+import {getGoods, getOptions} from "../../selectors/selectors";
 
-function ContainerItems(props) {
+function ContainerProductsItems(props) {
 
-    let items = useSelector((state) => state.goods.items);
-    let sizes = useSelector((state) => state.goods.options.sizes);
+    let items = useSelector((state) => getGoods(state));
+    let sizes = useSelector((state) => getOptions(state).sizes);
 
     let itemsComponents = items.map((item) => <ProductItem key={item.id} item={item} sizes={sizes}/>);
 
@@ -19,4 +20,4 @@ function ContainerItems(props) {
     );
 }
 
-export default ContainerItems;
+export default ContainerProductsItems;

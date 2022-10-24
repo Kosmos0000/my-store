@@ -17,9 +17,9 @@ const ProductItem = ({item, sizes}) => {
     let styleImage = {background: `url(${item.src}) center/cover no-repeat`};
     let [editMode, setEditMode] = useState(false);
     let sizesSpan = sizes.map((size) =>
-        item.sizes.includes(size, 0) ?
-            <span key={size} className={style.size + ' ' + style.active}> {size} </span> :
-            <span key={size} className={style.size}> {size} </span>
+        item.sizes.includes(size.value, 0) ?
+            <span key={size.value} className={style.size + ' ' + style.active}> {size.value} </span> :
+            <span key={size.value} className={style.size}> {size.value} </span>
     );
     let finalPrice = Math.round(item.price * (100 - item.discount) / 100);
 
@@ -42,11 +42,11 @@ const ProductItem = ({item, sizes}) => {
                             <div style={{textDecoration: 'none'}} className={style.price}>{item.price} грн</div>
                         </div>}
 
-                        <div className={style.sizeAndBasket}>
-                            <div>{sizesSpan}</div>
-                            <div onClick={() => dispatch(addToBasket(item.id))} className={style.basket}>В корзину <img
-                                src={basket} alt=""/></div>
-                        </div>
+                    <div className={style.sizeAndBasket}>
+                        <div>{sizesSpan}</div>
+                        <div onClick={() => dispatch(addToBasket(item.id))} className={style.basket}>В корзину <img
+                            src={basket} alt=""/></div>
+                    </div>
 
                 </div>
             </div>

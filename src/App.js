@@ -1,13 +1,15 @@
 import './App.css';
-import ContainerItems from "./components/containerItems/containerItems";
+import ContainerProductsItems from "./components/containerItems/containerProductsItems";
 import Filter from "./components/filter/filter";
+import {store} from "./redux-tollkit/redux";
 
 function App() {
+
 
     return (
         <div className="App">
             <Filter/>
-            <ContainerItems/>
+            <ContainerProductsItems/>
         </div>
     );
 }

@@ -2,3 +2,7 @@
     background: #F3F3F3;
     padding: 16px 0;
 }
+
+.filterContainer {
+    display: flex;
+}
