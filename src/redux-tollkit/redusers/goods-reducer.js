@@ -118,21 +118,29 @@ export default createReducer(initialState, {
     },
     [clearCheckbox]: function (state, action) {
         state.options[action.payload] = state.options[action.payload].map((item) => ({...item, isActive: false}));
-        state.copyItems = state.items;
+
     },
     [filterItems]: function (state, action) {
         let isFilterTouch = false;
+
         state.copyItems = state.items.filter((item) => {
+            let selectedValues = [];
                 for (let option in state.options) {
                     for (let i of state.options[option]) {
                         if (i.isActive) {
                             isFilterTouch = true;
-                            return item[option].includes(i.value);
+                            if (item[option].includes(i.value)) {
+                                selectedValues.push(i.value);
+                            }
                         }
+                        debugger;
 
                     }
+
                 }
+
             });
+
         if(!isFilterTouch) {
             state.copyItems = state.items;
         }
